@@ -20,11 +20,11 @@ const Todo = {
 };
 
 Todo.observable = Object.assign(Todo.observable, EventEmitter.prototype, {
-  subscribe(eventType, cb) {
-    this.on(eventType, cb);
+  subscribe(eventType, routine) {
+    this.on(eventType, routine);
   },
-  unsubscribe(eventType, cb) {
-    this.removeListener(eventType, cb);
+  unsubscribe(eventType, routine) {
+    this.removeListener(eventType, routine);
   },
   emit(eventType) {
     this.emit(eventType);
